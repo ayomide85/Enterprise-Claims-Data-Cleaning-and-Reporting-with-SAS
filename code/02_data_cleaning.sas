@@ -1,4 +1,4 @@
-## Remove duplicates
+## Remove duplicates ;
 proc sort data=cr.tsaclaims out=sort_tsaclaims noduprecs;
 	by _all_;
 run;
