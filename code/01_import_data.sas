@@ -6,3 +6,9 @@ proc import
 	  guessingrows=max;
 run;
 
+/* Exploring Columns */
+proc contents data=cr.tsaclaims varnum;
+run;
+
+proc print data=cr.tsaclaims(0bs=50);
+run;
