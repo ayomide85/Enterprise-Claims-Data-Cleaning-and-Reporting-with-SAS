@@ -1,68 +1,71 @@
-
 # TSA Claims Data Quality and Analytics Pipeline (SAS)
 
 ## Project Overview
 
-This project demonstrates an end-to-end SAS data analytics workflow using Transportation Security Administration (TSA) claims data.
-
-The objective was to transform raw claims records into a clean, validated analytical dataset and generate automated business reports for stakeholders.
+Developed an end-to-end SAS data quality and reporting solution for transportation claims data. The project transforms raw claims records into a standardized analytical dataset and generates automated reports to support operational and management decision-making.
 
 ## Business Problem
 
-The source dataset contained:
+The source data contained multiple quality issues that limited its reliability for analysis and reporting, including:
 
 * Duplicate records
 * Missing values
-* Invalid categorical values
-* Date inconsistencies
+* Inconsistent categorical values
+* Invalid and missing dates
 * Inconsistent capitalization and formatting
 
-The goal was to create a standardized claims dataset and answer business questions regarding claim trends, claim types, claim sites, claim dispositions, and claim settlement amounts.
+The objective was to implement data quality controls, create a clean analytical dataset, and produce reporting outputs that enable stakeholders to monitor claims activity and settlement trends.
 
-## Technical Skills Demonstrated
+## Solution Approach
 
-### Data Management
+### Data Preparation
 
-* PROC IMPORT
-* DATA Step Processing
+* Imported and profiled raw claims data
+* Removed duplicate records
+* Standardized categorical values
+* Applied consistent formats and labels
+* Excluded non-business-critical fields
+
+### Data Quality Validation
+
+* Identified missing Incident and Received dates
+* Flagged dates outside the approved reporting period
+* Detected logical date inconsistencies
+* Created automated review flags for records requiring investigation
+
+### Analysis and Reporting
+
+* Analyzed claims volume trends by year
+* Evaluated claim type, claim site, and disposition distributions
+* Calculated settlement amount statistics
+* Generated automated PDF reports using dynamic SAS reporting
+
+## SAS Technologies Used
+
+* DATA Step
 * PROC SORT
-* Duplicate Record Removal
-
-### Data Cleaning
-
-* Missing Value Standardization
-* Character Data Transformation
-* Date Conversion
-* Validation Rule Implementation
-
-### Data Quality Controls
-
-* Detection of Missing Dates
-* Detection of Invalid Date Ranges
-* Validation of Incident and Received Dates
-
-### Analysis
-
 * PROC FREQ
 * PROC MEANS
 * PROC SGPLOT
+* ODS PDF
+* SAS Macro Variables
 * BY-Group Processing
 
-### Reporting
+## Key Deliverables
 
-* ODS PDF
-* Dynamic Titles
-* Automated Report Generation
+* Cleaned and validated claims dataset
+* Automated data quality review process
+* Claims trend analysis and visualizations
+* Dynamic state-level reporting
+* Executive-ready PDF report
 
-## Key Business Metrics
+## Repository Structure
 
-* Number of records with date issues
-* Claims by incident year
-* Claim type distribution
-* Claim site distribution
-* Claim disposition distribution
-* Close amount statistics
+* `/code` – SAS programs for data preparation, validation, analysis, and reporting
+* `/docs` – Supporting documentation and data dictionary
+* `/reports` – Generated PDF reports
+* `/screenshots` – Sample outputs and visualizations
 
-## Results
+## Business Value
 
-The final solution produces a fully cleaned claims dataset and a professional PDF report suitable for business stakeholders.
+This project demonstrates practical experience in data quality management, business reporting automation, and analytical workflow development using SAS. The solution applies data governance principles commonly used in insurance, healthcare, financial services, and public sector analytics environments.
